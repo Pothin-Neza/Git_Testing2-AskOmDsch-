@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeClass;
 import pages.HomePage;
 
 public class BaseTests {
-    private WebDriver driver;
+    protected WebDriver driver;
     protected HomePage homePage;
 
     @BeforeClass
@@ -16,7 +16,7 @@ public class BaseTests {
         driver = new ChromeDriver();
         driver.get("https://askomdch.com/");
         homePage = new HomePage(driver);
-        driver.manage().window().fullscreen();
+        driver.manage().window().maximize();
     }
 
     @AfterClass
